@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function CasosExito() {
   const casos = [
@@ -61,31 +61,49 @@ export default function CasosExito() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState('right');
+  const animatingRef = useRef(false);
+  const currentRef = useRef(0);
 
-  const goTo = useCallback((index, dir = 'right') => {
-    if (animating) return;
+  const goTo = (index, dir = 'right') => {
+    if (animatingRef.current) return;
+    animatingRef.current = true;
     setDirection(dir);
     setAnimating(true);
     setTimeout(() => {
+      currentRef.current = index;
       setCurrent(index);
       setAnimating(false);
-    }, 300);
-  }, [animating]);
+      animatingRef.current = false;
+    }, 350);
+  };
 
   const prev = () => {
-    const idx = (current - 1 + casos.length) % casos.length;
+    const idx = (currentRef.current - 1 + casos.length) % casos.length;
     goTo(idx, 'left');
   };
 
-  const next = useCallback(() => {
-    const idx = (current + 1) % casos.length;
+  const next = () => {
+    const idx = (currentRef.current + 1) % casos.length;
     goTo(idx, 'right');
-  }, [current, casos.length, goTo]);
+  };
 
   useEffect(() => {
-    const timer = setInterval(next, 4500);
+    const timer = setInterval(() => {
+      const idx = (currentRef.current + 1) % casos.length;
+      if (!animatingRef.current) {
+        animatingRef.current = true;
+        setDirection('right');
+        setAnimating(true);
+        setTimeout(() => {
+          currentRef.current = idx;
+          setCurrent(idx);
+          setAnimating(false);
+          animatingRef.current = false;
+        }, 350);
+      }
+    }, 3000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, []);
 
   const renderStars = (rating) => (
     <div className="flex gap-1">
@@ -141,7 +159,7 @@ export default function CasosExito() {
           <div className="overflow-hidden px-2">
             <div
               className="grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300"
-              style={{ opacity: animating ? 0 : 1, transform: animating ? (direction === 'right' ? 'translateX(20px)' : 'translateX(-20px)') : 'translateX(0)', transition: 'opacity 0.3s ease, transform 0.3s ease' }}
+              style={{ opacity: animating ? 0 : 1, transform: animating ? (direction === 'right' ? 'translateX(20px)' : 'translateX(-20px)') : 'translateX(0)', transition: 'opacity 0.35s ease, transform 0.35s ease' }}
             >
               {visibleIndexes.map((idx) => {
                 const caso = casos[idx];
