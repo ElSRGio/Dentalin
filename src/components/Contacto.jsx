@@ -34,7 +34,7 @@ export default function Contacto() {
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-lime-500 bg-clip-text text-transparent">Estamos Aquí para Ti</span>
             <br />
-            <span className="text-gray-900">en Huejotzolgo, Puebla</span>
+            <span className="text-gray-900">en Huejotzingo, Puebla</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Agendar tu cita es fácil. Elige el método que más te convenga.
@@ -48,7 +48,7 @@ export default function Contacto() {
             <div className="text-5xl mb-4">💬</div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
             <p className="text-gray-600 mb-6">Reserva directa y consultas rápidas</p>
-            <a href="https://wa.me/5222120275320" 
+            <a href="https://wa.me/522212027532" 
                target="_blank" 
                rel="noopener noreferrer"
                className="w-full px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-flex items-center justify-center gap-2">
@@ -65,7 +65,7 @@ export default function Contacto() {
             <h3 className="text-xl font-bold text-gray-900 mb-2">Teléfono</h3>
             <p className="text-gray-600 mb-6">Llámanos para agendar</p>
             <a href="tel:+5222120275320" className="w-full px-6 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all block">
-              +52 22 1202 7532
+              +52 221 202 7532
             </a>
           </div>
 
@@ -196,7 +196,7 @@ export default function Contacto() {
                 <span className="text-2xl flex-shrink-0">🏥</span>
                 <div>
                   <p className="font-semibold text-gray-900">Av. 5 de Mayo #920</p>
-                  <p className="text-sm">3RA SECCIÓN, HUEJOTZOLGO</p>
+                  <p className="text-sm">3RA SECCIÓN, HUEJOTZINGO</p>
                   <p className="text-sm">PUEBLA, MÉXICO</p>
                 </div>
               </li>
