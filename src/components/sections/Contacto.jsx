@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { clinicConfig } from '../../config/clinic';
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ export default function Contacto() {
             <div className="text-5xl mb-4">💬</div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
             <p className="text-gray-600 mb-6">Reserva directa y consultas rápidas</p>
-            <a href="https://wa.me/522212027532" 
+            <a href={`https://wa.me/${clinicConfig.whatsapp}`} 
                target="_blank" 
                rel="noopener noreferrer"
                className="w-full px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-flex items-center justify-center gap-2">
@@ -64,8 +65,8 @@ export default function Contacto() {
             <div className="text-5xl mb-4">☎️</div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Teléfono</h3>
             <p className="text-gray-600 mb-6">Llámanos para agendar</p>
-            <a href="tel:+5222120275320" className="w-full px-6 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all block">
-              +52 221 202 7532
+            <a href={`tel:${clinicConfig.phone}`} className="w-full px-6 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all block">
+              {clinicConfig.phoneDisplay}
             </a>
           </div>
 

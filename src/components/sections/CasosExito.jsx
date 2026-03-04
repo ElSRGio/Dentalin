@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { clinicConfig } from '../../config/clinic';
 
 export default function CasosExito() {
   const casos = [
@@ -228,7 +229,7 @@ export default function CasosExito() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <a 
-              href="https://wa.me/522212027532" 
+              href={`https://wa.me/${clinicConfig.whatsapp}`} 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-flex items-center justify-center gap-2"

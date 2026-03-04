@@ -1,3 +1,5 @@
+import { clinicConfig } from '../../config/clinic';
+
 export default function Servicios() {
   const servicios = [
     { id: 1, titulo: 'Estética Dental', icon: '✨', desc: 'Blanqueamiento, carillas y diseño de sonrisa' },
@@ -35,7 +37,7 @@ export default function Servicios() {
               <div className="text-4xl mb-4">{s.icon}</div>
               <h3 className="font-bold text-gray-900 text-lg mb-2">{s.titulo}</h3>
               <p className="text-sm text-gray-600 mb-4">{s.desc}</p>
-              <a href="https://wa.me/5222120275320" className="text-cyan-400 hover:text-fuchsia-500 font-semibold text-sm">
+              <a href={`https://wa.me/${clinicConfig.whatsapp}`} className="text-cyan-400 hover:text-fuchsia-500 font-semibold text-sm">
                 Consultar →
               </a>
             </div>

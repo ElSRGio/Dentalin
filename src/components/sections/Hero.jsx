@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { clinicConfig } from '../../config/clinic';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="https://wa.me/5222120275320" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all text-center">
+              <a href={`https://wa.me/${clinicConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all text-center">
                 Tu Primera Consulta Gratis
               </a>
               <button onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-white transition-all text-center">

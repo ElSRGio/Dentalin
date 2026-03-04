@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import Preloader from './components/Preloader'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Servicios from './components/Servicios'
-import CasosExito from './components/CasosExito'
-import Contacto from './components/Contacto'
-import Footer from './components/Footer'
+import './styles/App.css'
+import Preloader from './components/layout/Preloader'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import Hero from './components/sections/Hero'
+import Servicios from './components/sections/Servicios'
+import CasosExito from './components/sections/CasosExito'
+import Contacto from './components/sections/Contacto'
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true)
